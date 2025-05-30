@@ -1,70 +1,93 @@
-# **Projeto Semestral – Análise de Causalidade**
+# **Análise Descritiva de Dados – Banco de Dados FOSP**
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![DoWhy](https://img.shields.io/badge/DoWhy-000000?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge\&logo=pandas\&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge\&logo=python\&logoColor=white)
 
-Bem-vindo ao repositório deste projeto semestral de **Análise de Causalidade**!  
-Aqui exploramos métodos estatísticos para inferir relações causais em conjuntos de dados reais, apoiados por bibliotecas em **Python** como **pandas**, **scikit-learn** e **DoWhy**.
-
----
-
-## 📋 **Sumário**
-- [Descrição do Projeto](#descrição-do-projeto)  
-- [Funcionalidades](#funcionalidades)  
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)  
-- [Estrutura de Diretórios](#estrutura-de-diretórios)  
-- [Como Executar](#como-executar)  
-- [Equipe](#equipe)  
+Este projeto realiza uma **análise descritiva** sobre as variáveis do **banco de dados da FOSP (Fundação Oncocentro de São Paulo)**, com o objetivo de extrair insights iniciais e preparar dados para futuras inferências.
 
 ---
 
-## 📝 **Descrição do Projeto**
+## 📋 Sumário
 
-Este projeto visa aplicar técnicas de **inferência causal** para identificar e quantificar efeitos de variáveis intervenientes em diferentes contextos (saúde, marketing, políticas públicas etc.). Comparamos abordagens como:
-- Modelos de regressão via ajuste direto  
-- Propensity Score Matching  
-- Gráficos causais (DAGs) e ajustes via **DoWhy**  
-- Experimentos observacionais e estimação de efeitos  
-
-O objetivo é entregar um pipeline flexível que vai da **limpeza de dados** até a **validação dos resultados** por bootstrapping e análise de sensibilidade.
-
----
-
-## 🚀 **Funcionalidades**
-
-✅ Importação e pré-processamento de dados (pandas)  
-✅ Construção e visualização de DAGs para modelagem causal  
-✅ Estimação de efeitos de tratamento com métodos como:
-   - Regressão linear/multinomial  
-   - Propensity Score Matching  
-   - Weighting (IPW)  
-✅ Validação estatística (intervalos de confiança, p-values)  
-✅ Análise de sensibilidade e robustez  
-✅ Geração de relatórios em Jupyter Notebooks  
+* [Sobre o Projeto](#sobre-o-projeto)
+* [Conteúdo](#conteúdo)
+* [Tecnologias Utilizadas](#tecnologias-utilizadas)
+* [Estrutura de Diretórios](#estrutura-de-diretórios)
+* [Como Reproduzir](#como-reproduzir)
+* [Autores](#autores)
 
 ---
 
-## 🛠 **Tecnologias Utilizadas**
+## 📝 Sobre o Projeto
 
-- ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) **Python 3.10+** – Linguagem principal  
-- ![pandas](https://img.shields.io/badge/pandas-150458?style=flat&logo=pandas&logoColor=white) **pandas** – Manipulação de dados  
-- ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white) **scikit-learn** – Modelos estatísticos  
-- ![DoWhy](https://img.shields.io/badge/DoWhy-000000?style=flat&logo=python&logoColor=white) **DoWhy** – Inferência causal  
-- **Jupyter Notebook** – Documentação interativa  
-- **Matplotlib / Seaborn** – Visualizações  
+A análise descritiva tem foco em:
+
+* **Limpeza e tratamento de dados** (valores faltantes, duplicatas)
+* **Estatísticas univariadas** (média, mediana, quartis)
+* **Visualizações exploratórias** (histogramas, boxplots, scatterplots)
+* **Análise de correlação** entre variáveis-chave
+* Identificação de padrões e outliers
+
+O notebook principal [`Análise Descritiva.ipynb`](notebooks/Análise%20Descritiva.ipynb) contém todo o fluxo de trabalho, desde a importação até a geração de gráficos e tabelas resumo.
 
 ---
 
-## 📁 **Estrutura de Diretórios**
+## 🚀 Conteúdo
 
-```text
-/
-├── data/                ← Datasets brutos e processados
-├── notebooks/           ← Análises exploratórias e relatórios
-├── src/                 ← Códigos-fonte modulares
-│   ├── preprocessing/   ← Funções de limpeza e transformação
-│   ├── modeling/        ← Scripts de estimação causal
-│   └── utils/           ← Utilitários gerais
-├── requirements.txt     ← Dependências do projeto
-└── README.md            ← Este arquivo
+* `data/raw/` – Dados originais sem tratamento
+* `data/processed/` – Conjuntos preparados para análise
+* `notebooks/Análise Descritiva.ipynb` – Notebook Jupyter com etapas e visualizações
+* `src/` – Scripts Python modulados para limpeza e geração de relatórios
+* `requirements.txt` – Dependências do projeto
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+* **Python 3.10+**
+* **pandas** – Manipulação e transformação de dados
+* **NumPy** – Operações numéricas
+* **Matplotlib** – Gráficos estáticos
+* **Seaborn** – Visualizações estatísticas
+* **Jupyter Notebook** – Ambiente interativo
+
+---
+
+## 💻 Como Reproduzir
+
+1. **Clone o repositório**
+
+   ```bash
+   git clone https://github.com/jgfioruci/Analise_Causalidade.git
+   cd Analise_Causalidade
+   ```
+2. **Crie e ative um ambiente virtual**
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate    # Windows
+   ```
+3. **Instale as dependências**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. **Abra e execute o notebook**
+
+   ```bash
+   jupyter notebook
+   ```
+
+   Em seguida, escolha `notebooks/Análise Descritiva.ipynb` e siga as células em ordem.
+
+---
+
+## 👥 Autores
+
+* João Gabriel Fioruci
+* Vaderlei Parro
+* Lucas Buk Cardoso
+
+*Qualquer dúvida ou sugestão, abra uma issue ou envie um pull request!*
